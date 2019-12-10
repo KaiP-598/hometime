@@ -1,20 +1,47 @@
 PODS:
+  - Alamofire (4.9.1)
   - Nimble (8.0.4)
+  - ObjectMapper (3.5.1)
   - Quick (2.2.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - Nimble (~> 8.0)
+  - ObjectMapper
   - Quick (~> 2.0)
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Nimble
     - Quick
+  trunk:
+    - Alamofire
+    - ObjectMapper
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 8c259e1571fcd1f8d6a295a40770c418f5827815
+PODFILE CHECKSUM: beb79e74f598f7b90ca3ac5a7ea74076b6a87788
 
 COCOAPODS: 1.8.4

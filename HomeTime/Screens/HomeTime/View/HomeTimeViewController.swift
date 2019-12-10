@@ -3,14 +3,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-typealias JSONDictionary = [String: Any]
 
-enum JSONError: Error {
-  case serialization
-}
 
-class ViewController: UITableViewController {
+class HomeTimeViewController: UITableViewController {
 
   @IBOutlet var tramTimesTable: UITableView!
   
@@ -21,14 +19,32 @@ class ViewController: UITableViewController {
   var token: String?
   var session: URLSession?
 
+  var viewModel: HomeTimeViewModeling?
+
+  private let disposeBag = DisposeBag()
+    
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    
 
+    setupBinding()
+    
     let config = URLSessionConfiguration.default
     session = URLSession(configuration: config, delegate: nil, delegateQueue: OperationQueue.main)
 
     clearTramData()
   }
+    
+    func setupBinding(){
+        viewModel = HomeTimeViewModel.init(networkService: NetworkService())
+        
+        guard let viewModel = self.viewModel else {
+            return
+        }
+        
+        
+    }
 
   @IBAction func clearButtonTapped(_ sender: UIBarButtonItem) {
     clearTramData()
@@ -43,7 +59,7 @@ class ViewController: UITableViewController {
 
 // MARK: - Tram Data
 
-extension ViewController {
+extension HomeTimeViewController {
 
   func clearTramData() {
     northTrams = nil
@@ -154,7 +170,7 @@ extension ViewController {
 
 // MARK - UITableViewDataSource
 
-extension ViewController {
+extension HomeTimeViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "TramCellIdentifier", for: indexPath)
 

@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A3489C0239FAEE6005C0A3A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3489BF239FAEE6005C0A3A /* NetworkService.swift */; };
+		1A3489C6239FB0F3005C0A3A /* Tram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3489C5239FB0F3005C0A3A /* Tram.swift */; };
+		1A3489C9239FB4F6005C0A3A /* HomeTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3489C8239FB4F6005C0A3A /* HomeTimeViewModel.swift */; };
 		33070CE91F987F6D003CC41D /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33070CE81F987F6D003CC41D /* ViewControllerSpec.swift */; };
 		330D12651F96F40E00463505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D12641F96F40E00463505 /* AppDelegate.swift */; };
-		330D12671F96F40E00463505 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D12661F96F40E00463505 /* ViewController.swift */; };
+		330D12671F96F40E00463505 /* HomeTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D12661F96F40E00463505 /* HomeTimeViewController.swift */; };
 		330D126A1F96F40E00463505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330D12681F96F40E00463505 /* Main.storyboard */; };
 		330D126C1F96F40E00463505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330D126B1F96F40E00463505 /* Assets.xcassets */; };
 		330D126F1F96F40E00463505 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330D126D1F96F40E00463505 /* LaunchScreen.storyboard */; };
@@ -30,12 +33,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A3489BF239FAEE6005C0A3A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1A3489C5239FB0F3005C0A3A /* Tram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tram.swift; sourceTree = "<group>"; };
+		1A3489C8239FB4F6005C0A3A /* HomeTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimeViewModel.swift; sourceTree = "<group>"; };
 		2415AF054FE18CFDAC6692CD /* Pods_HomeTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33070CE81F987F6D003CC41D /* ViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
 		33070CF61F997EC9003CC41D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		330D12611F96F40E00463505 /* HomeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		330D12641F96F40E00463505 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		330D12661F96F40E00463505 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		330D12661F96F40E00463505 /* HomeTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimeViewController.swift; sourceTree = "<group>"; };
 		330D12691F96F40E00463505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		330D126B1F96F40E00463505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		330D126E1F96F40E00463505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +77,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A3489BD239FAED1005C0A3A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1A3489C1239FAFCA005C0A3A /* HomeTime */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1A3489BE239FAED8005C0A3A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1A3489BF239FAEE6005C0A3A /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1A3489C1239FAFCA005C0A3A /* HomeTime */ = {
+			isa = PBXGroup;
+			children = (
+				1A3489C4239FAFDE005C0A3A /* Model */,
+				1A3489C3239FAFDB005C0A3A /* View */,
+				1A3489C2239FAFD2005C0A3A /* ViewModel */,
+			);
+			path = HomeTime;
+			sourceTree = "<group>";
+		};
+		1A3489C2239FAFD2005C0A3A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1A3489C8239FB4F6005C0A3A /* HomeTimeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1A3489C3239FAFDB005C0A3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				330D12661F96F40E00463505 /* HomeTimeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1A3489C4239FAFDE005C0A3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A3489C5239FB0F3005C0A3A /* Tram.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1A3489C7239FB35A005C0A3A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				331BFAA21F973E8000E10979 /* DotNetDateConverter.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		330D12581F96F40E00463505 = {
 			isa = PBXGroup;
 			children = (
@@ -95,9 +159,10 @@
 		330D12631F96F40E00463505 /* HomeTime */ = {
 			isa = PBXGroup;
 			children = (
+				1A3489C7239FB35A005C0A3A /* Utility */,
+				1A3489BE239FAED8005C0A3A /* Services */,
+				1A3489BD239FAED1005C0A3A /* Screens */,
 				330D12641F96F40E00463505 /* AppDelegate.swift */,
-				330D12661F96F40E00463505 /* ViewController.swift */,
-				331BFAA21F973E8000E10979 /* DotNetDateConverter.swift */,
 				330D12681F96F40E00463505 /* Main.storyboard */,
 				330D126B1F96F40E00463505 /* Assets.xcassets */,
 				330D126D1F96F40E00463505 /* LaunchScreen.storyboard */,
@@ -147,6 +212,7 @@
 				330D125D1F96F40E00463505 /* Sources */,
 				330D125E1F96F40E00463505 /* Frameworks */,
 				330D125F1F96F40E00463505 /* Resources */,
+				901976F5509C7CD957AB45FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,6 +342,34 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		901976F5509C7CD957AB45FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeTime/Pods-HomeTime-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HomeTime/Pods-HomeTime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DEEC95D2CCDDBB57786D05A6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,8 +397,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				330D12671F96F40E00463505 /* ViewController.swift in Sources */,
+				1A3489C6239FB0F3005C0A3A /* Tram.swift in Sources */,
+				330D12671F96F40E00463505 /* HomeTimeViewController.swift in Sources */,
 				331BFAA31F973E8000E10979 /* DotNetDateConverter.swift in Sources */,
+				1A3489C0239FAEE6005C0A3A /* NetworkService.swift in Sources */,
+				1A3489C9239FB4F6005C0A3A /* HomeTimeViewModel.swift in Sources */,
 				330D12651F96F40E00463505 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

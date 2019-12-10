@@ -3,6 +3,11 @@ platform :ios, '11.0'
 
 target 'HomeTime' do
   # Pods for HomeTime
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'ObjectMapper'
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
 
   target 'HomeTimeTests' do
     inherit! :search_paths
