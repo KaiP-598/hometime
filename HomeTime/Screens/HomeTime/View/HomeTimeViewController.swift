@@ -43,7 +43,11 @@ class HomeTimeViewController: UITableViewController {
             return
         }
         
-        
+        viewModel.loadNorthTramsSuccess
+            .subscribe(onNext: { [weak self] _ in
+                self?.tramTimesTable.reloadData()
+            }).disposed(by: disposeBag)
+            
     }
 
   @IBAction func clearButtonTapped(_ sender: UIBarButtonItem) {
@@ -74,22 +78,22 @@ extension HomeTimeViewController {
     loadingNorth = true
     loadingSouth = true
 
-    if let token = token {
-      print("Token \(token)")
-      loadTramDataUsing(token: token)
-    } else {
-      fetchApiToken { [weak self] token, error in
-        if let token = token, error == nil  {
-          self?.token = token
-          print("Token: : \(String(describing: token))")
-          self?.loadTramDataUsing(token: token)
-        } else {
-          self?.loadingNorth = false
-          self?.loadingSouth = false
-          print("Error retrieving token: \(String(describing: error))")
-        }
-      }
-    }
+//    if let token = token {
+//      print("Token \(token)")
+//      loadTramDataUsing(token: token)
+//    } else {
+//      fetchApiToken { [weak self] token, error in
+//        if let token = token, error == nil  {
+//          self?.token = token
+//          print("Token: : \(String(describing: token))")
+//          self?.loadTramDataUsing(token: token)
+//        } else {
+//          self?.loadingNorth = false
+//          self?.loadingSouth = false
+//          print("Error retrieving token: \(String(describing: error))")
+//        }
+//      }
+//    }
   }
 
   func fetchApiToken(completion: @escaping (_ token: String?, _ error: Error?) -> Void) {
@@ -158,8 +162,15 @@ extension HomeTimeViewController {
     task?.resume()
   }
 
-  func tramsFor(section: Int) -> [Any]? {
-    return (section == 0) ? northTrams : southTrams
+  func tramsFor(section: Int) -> [Tram]? {
+    if section == 0 {
+        let trams = viewModel?.northTramArray
+        return trams
+    } else {
+        let trams = viewModel?.southTramArray
+        return trams
+    }
+
   }
 
   func isLoading(section: Int) -> Bool {
@@ -174,17 +185,17 @@ extension HomeTimeViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "TramCellIdentifier", for: indexPath)
 
-    let trams = tramsFor(section: indexPath.section)
-    guard let tram = trams?[indexPath.row] as? JSONDictionary else {
-      if isLoading(section: indexPath.section) {
-        cell.textLabel?.text = "Loading upcoming trams..."
-      } else {
-        cell.textLabel?.text = "No upcoming trams. Tap load to fetch"
-      }
-      return cell
+    guard let trams = tramsFor(section: indexPath.section), trams.count > 0 else {
+        if isLoading(section: indexPath.section) {
+          cell.textLabel?.text = "Loading upcoming trams..."
+        } else {
+          cell.textLabel?.text = "No upcoming trams. Tap load to fetch"
+        }
+        return cell
     }
 
-    guard let arrivalDateString = tram["PredictedArrivalDateTime"] as? String else {
+    let tram = trams[indexPath.row]
+    guard let arrivalDateString = tram.predictedArrivalDateTime else {
       return cell
     }
     let dateConverter = DotNetDateConverter()
@@ -200,13 +211,13 @@ extension HomeTimeViewController {
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if (section == 0)
     {
-      guard let count = northTrams?.count else { return 1 }
-      return count
+        guard let count =  viewModel?.northTramArray.count else { return 1 }
+        return count == 0 ? 1: count
     }
     else
     {
-      guard let count = southTrams?.count else { return 1 }
-      return count
+      guard let count = viewModel?.southTramArray.count else { return 1 }
+      return count == 0 ? 1: count
     }
   }
 

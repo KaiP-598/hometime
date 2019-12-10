@@ -3,7 +3,7 @@ import RxSwift
 
 protocol HomeTimeViewModeling {
     var northTramArray: [Tram] {get set}
-    var southTramArary: [Tram] {get set}
+    var southTramArray: [Tram] {get set}
     
     var loadNorthTrams: PublishSubject<Void> {get}
     var loadSouthTrams: PublishSubject<Void> {get}
@@ -13,7 +13,7 @@ protocol HomeTimeViewModeling {
 
 class HomeTimeViewModel: HomeTimeViewModeling{
     var northTramArray: [Tram] = [Tram]()
-    var southTramArary: [Tram] = [Tram]()
+    var southTramArray: [Tram] = [Tram]()
     
     var loadNorthTrams: PublishSubject<Void> = PublishSubject<Void>()
     var loadSouthTrams: PublishSubject<Void> = PublishSubject<Void>()
@@ -28,9 +28,26 @@ class HomeTimeViewModel: HomeTimeViewModeling{
         self.networkService = networkService
         
         loadNorthTrams
-            .flatMapLatest { (_) -> Observable<[Tram]> in
-                getTrams(stopId: "4055")
-        }
+            .flatMapLatest { [weak self] (_) -> Observable<[Tram]> in
+                self?.getTrams(stopId: "4055") ?? Observable.just([Tram]())
+                
+            }
+        .subscribe(onNext: { [weak self] (trams) in
+            self?.northTramArray = trams
+            self?.loadNorthTramsSuccess.onNext(())
+        })
+        .disposed(by: disposeBag)
+        
+        loadSouthTrams
+            .flatMapLatest { [weak self] (_) -> Observable<[Tram]> in
+                self?.getTrams(stopId: "4155") ?? Observable.just([Tram]())
+                
+            }
+        .subscribe(onNext: { [weak self] (trams) in
+            self?.southTramArray = trams
+            self?.loadSouthTramsSuccess.onNext(())
+        })
+        .disposed(by: disposeBag)
     }
     
     func getTrams(stopId: String) -> Observable<[Tram]>{
@@ -57,6 +74,6 @@ class HomeTimeViewModel: HomeTimeViewModeling{
     
     func clearTramData(){
         northTramArray = [Tram]()
-        southTramArary = [Tram]()
+        southTramArray = [Tram]()
     }
 }
