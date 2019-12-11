@@ -15,7 +15,6 @@ enum NetworkError: Error {
 }
 
 protocol NetworkServicing {
-    func fetchApiToken(completion: @escaping (_ token: String?, _ error: NetworkError) -> Void)
     
     func loadTrams(stopId: String, completion: @escaping (_ trams: [Tram]?, _ error: NetworkError) -> Void)
 }

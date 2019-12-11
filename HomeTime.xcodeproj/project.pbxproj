@@ -10,14 +10,14 @@
 		1A3489C0239FAEE6005C0A3A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3489BF239FAEE6005C0A3A /* NetworkService.swift */; };
 		1A3489C6239FB0F3005C0A3A /* Tram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3489C5239FB0F3005C0A3A /* Tram.swift */; };
 		1A3489C9239FB4F6005C0A3A /* HomeTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3489C8239FB4F6005C0A3A /* HomeTimeViewModel.swift */; };
-		33070CE91F987F6D003CC41D /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33070CE81F987F6D003CC41D /* ViewControllerSpec.swift */; };
+		1A3489CF23A07799005C0A3A /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3489CE23A07799005C0A3A /* MockNetworkService.swift */; };
+		1A3489D123A078AB005C0A3A /* HomeTimeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3489D023A078AB005C0A3A /* HomeTimeTest.swift */; };
 		330D12651F96F40E00463505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D12641F96F40E00463505 /* AppDelegate.swift */; };
 		330D12671F96F40E00463505 /* HomeTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D12661F96F40E00463505 /* HomeTimeViewController.swift */; };
 		330D126A1F96F40E00463505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330D12681F96F40E00463505 /* Main.storyboard */; };
 		330D126C1F96F40E00463505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330D126B1F96F40E00463505 /* Assets.xcassets */; };
 		330D126F1F96F40E00463505 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330D126D1F96F40E00463505 /* LaunchScreen.storyboard */; };
 		331BFAA31F973E8000E10979 /* DotNetDateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331BFAA21F973E8000E10979 /* DotNetDateConverter.swift */; };
-		3364EC881F98236E00161053 /* DateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3364EC871F98236E00161053 /* DateFormatterTest.swift */; };
 		54ED0319DC3CC3A9366207DE /* Pods_HomeTimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A07D474CE395E42F62BE85 /* Pods_HomeTimeTests.framework */; };
 		83E7869F25318958E28F6AD9 /* Pods_HomeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2415AF054FE18CFDAC6692CD /* Pods_HomeTime.framework */; };
 /* End PBXBuildFile section */
@@ -36,8 +36,10 @@
 		1A3489BF239FAEE6005C0A3A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1A3489C5239FB0F3005C0A3A /* Tram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tram.swift; sourceTree = "<group>"; };
 		1A3489C8239FB4F6005C0A3A /* HomeTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimeViewModel.swift; sourceTree = "<group>"; };
+		1A3489CD23A07798005C0A3A /* HomeTimeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeTimeTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		1A3489CE23A07799005C0A3A /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		1A3489D023A078AB005C0A3A /* HomeTimeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimeTest.swift; sourceTree = "<group>"; };
 		2415AF054FE18CFDAC6692CD /* Pods_HomeTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		33070CE81F987F6D003CC41D /* ViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
 		33070CF61F997EC9003CC41D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		330D12611F96F40E00463505 /* HomeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		330D12641F96F40E00463505 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +51,6 @@
 		330D12751F96F40E00463505 /* HomeTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		330D127B1F96F40E00463505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		331BFAA21F973E8000E10979 /* DotNetDateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotNetDateConverter.swift; sourceTree = "<group>"; };
-		3364EC871F98236E00161053 /* DateFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTest.swift; sourceTree = "<group>"; };
 		3CB7CB1C860FAFBD4F79371D /* Pods-HomeTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeTime/Pods-HomeTime.release.xcconfig"; sourceTree = "<group>"; };
 		91E1605E89E74E01785D5868 /* Pods-HomeTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeTimeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeTimeTests/Pods-HomeTimeTests.release.xcconfig"; sourceTree = "<group>"; };
 		AC3DF52AA8D0F3DFFE4C9E93 /* Pods-HomeTimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeTimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeTimeTests/Pods-HomeTimeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +136,31 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		1A3489CA23A0768D005C0A3A /* MockServices */ = {
+			isa = PBXGroup;
+			children = (
+				1A3489CE23A07799005C0A3A /* MockNetworkService.swift */,
+				1A3489CD23A07798005C0A3A /* HomeTimeTests-Bridging-Header.h */,
+			);
+			path = MockServices;
+			sourceTree = "<group>";
+		};
+		1A3489CB23A07693005C0A3A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1A3489CC23A076DA005C0A3A /* HomeTime */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1A3489CC23A076DA005C0A3A /* HomeTime */ = {
+			isa = PBXGroup;
+			children = (
+				1A3489D023A078AB005C0A3A /* HomeTimeTest.swift */,
+			);
+			path = HomeTime;
+			sourceTree = "<group>";
+		};
 		330D12581F96F40E00463505 = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +200,8 @@
 		330D12781F96F40E00463505 /* HomeTimeTests */ = {
 			isa = PBXGroup;
 			children = (
-				3364EC871F98236E00161053 /* DateFormatterTest.swift */,
-				33070CE81F987F6D003CC41D /* ViewControllerSpec.swift */,
+				1A3489CB23A07693005C0A3A /* Screens */,
+				1A3489CA23A0768D005C0A3A /* MockServices */,
 				330D127B1F96F40E00463505 /* Info.plist */,
 			);
 			path = HomeTimeTests;
@@ -260,7 +286,7 @@
 					};
 					330D12741F96F40E00463505 = {
 						CreatedOnToolsVersion = 9.0;
-						LastSwiftMigration = 1110;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 330D12601F96F40E00463505;
 					};
@@ -410,8 +436,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3364EC881F98236E00161053 /* DateFormatterTest.swift in Sources */,
-				33070CE91F987F6D003CC41D /* ViewControllerSpec.swift in Sources */,
+				1A3489CF23A07799005C0A3A /* MockNetworkService.swift in Sources */,
+				1A3489D123A078AB005C0A3A /* HomeTimeTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,11 +617,14 @@
 			baseConfigurationReference = AC3DF52AA8D0F3DFFE4C9E93 /* Pods-HomeTimeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HomeTimeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rea-group.HomeTime.HomeTimeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeTimeTests/MockServices/HomeTimeTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeTime.app/HomeTime";
@@ -607,11 +636,13 @@
 			baseConfigurationReference = 91E1605E89E74E01785D5868 /* Pods-HomeTimeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HomeTimeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rea-group.HomeTime.HomeTimeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeTimeTests/MockServices/HomeTimeTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeTime.app/HomeTime";

@@ -10,6 +10,7 @@ protocol HomeTimeViewModeling {
     var loadNorthTramsSuccess: PublishSubject<Void> {get}
     var loadSouthTramsSuccess: PublishSubject<Void> {get}
     
+    func getTrams(stopId: String) -> Observable<[Tram]>
     func clearTramData()
 }
 
