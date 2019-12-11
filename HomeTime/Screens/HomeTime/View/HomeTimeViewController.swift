@@ -25,13 +25,8 @@ class HomeTimeViewController: UITableViewController {
     
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    
 
     setupBinding()
-    
-    let config = URLSessionConfiguration.default
-    session = URLSession(configuration: config, delegate: nil, delegateQueue: OperationQueue.main)
 
     clearTramData()
   }
@@ -44,6 +39,11 @@ class HomeTimeViewController: UITableViewController {
         }
         
         viewModel.loadNorthTramsSuccess
+            .subscribe(onNext: { [weak self] _ in
+                self?.tramTimesTable.reloadData()
+            }).disposed(by: disposeBag)
+        
+        viewModel.loadSouthTramsSuccess
             .subscribe(onNext: { [weak self] _ in
                 self?.tramTimesTable.reloadData()
             }).disposed(by: disposeBag)
@@ -66,8 +66,7 @@ class HomeTimeViewController: UITableViewController {
 extension HomeTimeViewController {
 
   func clearTramData() {
-    northTrams = nil
-    southTrams = nil
+    viewModel?.clearTramData()
     loadingNorth = false
     loadingSouth = false
 

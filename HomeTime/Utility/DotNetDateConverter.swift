@@ -19,9 +19,21 @@ class DotNetDateConverter {
   }
 
   func formattedDateFromString(_ string: String) -> String {
-    let date = dateFromDotNetFormattedDateString(string)
-    let formatter = DateFormatter()
-    formatter.dateFormat = "HH:mm"
-    return formatter.string(from: date!)
+    if let date = dateFromDotNetFormattedDateString(string){
+        let currentDate = Date()
+        let timeDifference = date.timeIntervalSince(currentDate)
+        let minutes = floor(timeDifference / 60)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: date) + " (" + (minutes.clean) + "min)"
+    } else {
+        return ""
+    }
   }
+}
+
+extension Double {
+    var clean: String {
+       return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
+    }
 }
