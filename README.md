@@ -27,3 +27,9 @@ To install the dependencies
 
 ---
 
+# How to run the App
+1. Open file using Xcode
+2. Select a Simulator or a connected device in Xcode
+3. Select Automatically manage signing with your team and an unique Bundle Identifier
+4. Run the app
+
