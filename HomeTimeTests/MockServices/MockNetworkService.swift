@@ -2,7 +2,6 @@
 //  MockNetworkService.swift
 //  HomeTimeTests
 //
-//  Created by Kaipeng Wu on 11/12/19.
 //  Copyright © 2019 REA. All rights reserved.
 //
 
